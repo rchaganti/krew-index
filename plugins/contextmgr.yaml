@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: contextmgr
+spec:
+  version: v0.0.1
+  homepage: https://github.com/rchaganti/kubectl-contextmgr
+  shortDescription: A terminal user interface to manage Kubernetes contexts.
+  description: |
+    This plugin shows the available kubeconfig contexts in an interactive table. 
+    For each context, the cluster reachability status is shown in the table.
+  caveats: |
+    * This does not yet support deletion of contexts.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rchaganti/kubectl-contextmgr/releases/download/v0.0.1/kubectl-contextmgr_v0.0.1_linux_amd64.tar.gz
+    sha256: c4b5b93c13b9bc40efe972a6deddd435113acc994c3f7debff7bf21af51fe6af
+    bin: kubectl-contextmgr
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rchaganti/kubectl-contextmgr/releases/download/v0.0.1/kubectl-contextmgr_v0.0.1_windows_amd64.zip
+    sha256: 4be72352d95a99cb91e2535b8ae5bec3fc65e98caaf8e8e1353d732223c6f1c7
+    bin: kubectl-contextmgr.exe
